@@ -15,4 +15,4 @@ const userReducer = (state = initialState ,action) => {
     }
 };
 
-export default todoReducer
+export default userReducer;

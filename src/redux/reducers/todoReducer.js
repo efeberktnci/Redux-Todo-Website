@@ -18,6 +18,17 @@ const todoReducer = (state = initialState, action) => {
             return {...state, todos: filtered};
 
 
+        case "UPDATE_TODO":
+            const copyTodos = [...state.todos ];
+
+            const index = copyTodos.findIndex(
+                (todo) => todo.id === action.payload.id
+                );
+
+            copyTodos.splice(index, 1,action.payload);
+
+            return { ...state, todos: copyTodos}
+
             default:
                 return state;
         

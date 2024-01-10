@@ -1,14 +1,14 @@
 const initialState = {
     user: [],
-    category: [,]
+    category: []
 }
 
 
 const userReducer = (state = initialState ,action) => {
     switch(action.type){
-        case "ADD_TODO":
+        case "ADD_USER":
             return "BOŞ";
-        case "REMOVE_TODO":
+        case "REMOVE_USER":
             return "BOŞ";
             default:
                 return state;

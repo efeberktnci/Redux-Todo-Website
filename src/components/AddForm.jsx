@@ -1,6 +1,11 @@
 import { v4 } from "uuid";
+import { useDispatch } from 'react-redux';
 
 const AddForm = () => {
+
+   const dispatch = useDispatch()
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -12,8 +17,10 @@ const AddForm = () => {
     
     };
     
-    console.log(newTodo)
-
+    dispatch({
+      type:"ADD_TODO",
+      payload: newTodo,
+    })
   
   };
 

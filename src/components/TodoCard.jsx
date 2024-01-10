@@ -27,7 +27,9 @@ const TodoCard = ({ todo }) => {
       <h6>{todo.is_done ? "Completed" : "In Progress"}</h6>
       <p>{todo.created_at}</p>
       <button className="btn btn-primary">Edit</button>
-      <button onClick={handleStatus} className="btn btn-success mx-3">Complete</button>
+      <button onClick={handleStatus} className="btn btn-success mx-3">
+        {todo.is_done ? "Undo" : "Complete"}
+      </button>
       <button onClick={handleDelete} className="btn btn-danger">
         Delete
       </button>

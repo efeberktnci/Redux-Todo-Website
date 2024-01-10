@@ -19,15 +19,10 @@ const todoReducer = (state = initialState, action) => {
 
 
         case "UPDATE_TODO":
-            const copyTodos = [...state.todos ];
+           const newTodos = state.todos.map((i) => 
+           i.id === action.payload.id ? action.payload: i)
 
-            const index = copyTodos.findIndex(
-                (todo) => todo.id === action.payload.id
-                );
-
-            copyTodos.splice(index, 1,action.payload);
-
-            return { ...state, todos: copyTodos}
+           return {...state, todos: newTodos};;
 
             default:
                 return state;
@@ -36,3 +31,14 @@ const todoReducer = (state = initialState, action) => {
 };
 
 export default todoReducer
+
+
+ // const copyTodos = [...state.todos ];
+
+            // const index = copyTodos.findIndex(
+            //     (todo) => todo.id === action.payload.id
+            //     );
+
+            // copyTodos.splice(index, 1,action.payload);
+
+            // return { ...state, todos: copyTodos}

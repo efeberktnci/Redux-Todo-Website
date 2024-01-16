@@ -1,3 +1,4 @@
+import { ActionTypes } from "./actionTypes";
 
 const initialState = {
     todos: [],
@@ -7,18 +8,18 @@ const initialState = {
 
 const todoReducer = (state = initialState, action) => {
     switch(action.type){
-        case "ADD_TODO":
+        case ActionTypes.ADD_TODO:
             const tempTodos = state.todos.concat(action.payload);
 
             return {...state, todos: tempTodos }
             
-        case "REMOVE_TODO": 
+        case ActionTypes.REMOVE_TODO: 
             const filtered = state.todos.filter(
              (todo) => todo.id !== action.payload)
             return {...state, todos: filtered};
 
 
-        case "UPDATE_TODO":
+        case ActionTypes.UPDATE_TODO:
            const newTodos = state.todos.map((i) => 
            i.id === action.payload.id ? action.payload: i)
 

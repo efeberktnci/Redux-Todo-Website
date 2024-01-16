@@ -24,7 +24,9 @@ const TodoCard = ({ todo }) => {
    
     const updated = { ...todo , is_done: !todo.is_done };
 
-    dispatch(updateTodo(updated))
+    axios.put(`/todos/${todo.id}` , updated)
+    .then(() =>   dispatch(updateTodo(updated)) )
+
   }
 
   return (

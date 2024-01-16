@@ -3,6 +3,7 @@ import Modal from "./Modal";
 import { useState } from "react";
 import { ActionTypes } from "../redux/reducers/actionTypes";
 import { removeTodo, updateTodo } from "../redux/actions/todoActions";
+import axios from "axios"
 
 const TodoCard = ({ todo }) => {
   const dispatch = useDispatch();
@@ -10,7 +11,11 @@ const TodoCard = ({ todo }) => {
 
   const handleDelete = () => {
 
-   axios.delete(`/todos/${todo.id}`)
+   axios
+     .delete(`/todos/${todo.id}`)
+     .then(() => dispatch(removeTodo(todo.id)))
+     .catch(() => alert(" The error occured in remove event ! "))
+
 
    dispatch(removeTodo(todo.id))
   };

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { ActionTypes } from "../redux/reducers/actionTypes";
+import { updateTodo } from "../redux/actions/todoActions";
 
 const Modal = ({todo , close}) => {
 
@@ -12,10 +13,7 @@ const Modal = ({todo , close}) => {
 
     const updated = {...todo, text:newText };
 
-    dispatch({
-      type: ActionTypes.UPDATE_TODO,
-      payload: updated
-    })
+    dispatch( updateTodo(updated));
 
     close();
   }

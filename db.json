@@ -1,0 +1,16 @@
+{
+    "todos": [
+        {
+            "id": "c1625624-e1d4-4197-a323-9b23196f5904",
+            "text": "Typescript projesi ekle",
+            "created_at": "16.01.2024",
+            "isDone": false
+        },
+        {
+            "id": "1a05450b-986e-4a3b-832d-57177a0408ca",
+            "text": "Javascript Projesi Ekle",
+            "created_at": "16.01.2024",
+            "isDone": false
+        }
+    ]
+}

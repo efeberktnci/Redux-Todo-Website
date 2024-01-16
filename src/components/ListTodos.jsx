@@ -5,6 +5,7 @@ import TodoCard from "./TodoCard";
 const ListTodos = () => {
   const store = useSelector((store) => store.todoReducer);
 
+  console.log(store.todos)
   return (
     <div>
       {store.todos.map((todo) => (

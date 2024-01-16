@@ -1,6 +1,8 @@
 import { v4 } from "uuid";
 import { useDispatch } from 'react-redux';
 import { ActionTypes } from "../redux/reducers/actionTypes";
+import { addTodo } from "../redux/actions/todoActions";
+
 
 const AddForm = () => {
 
@@ -18,10 +20,7 @@ const AddForm = () => {
     
     };
     
-    dispatch({
-      type: ActionTypes.ADD_TODO,
-      payload: newTodo,
-    })
+    dispatch(addTodo(newTodo))
   
   };
 

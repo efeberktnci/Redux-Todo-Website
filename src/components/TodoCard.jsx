@@ -2,27 +2,21 @@ import { useDispatch } from "react-redux";
 import Modal from "./Modal";
 import { useState } from "react";
 import { ActionTypes } from "../redux/reducers/actionTypes";
+import { removeTodo, updateTodo } from "../redux/actions/todoActions";
 
 const TodoCard = ({ todo }) => {
   const dispatch = useDispatch();
   const[isOpen, setIsOpen] = useState(false)
 
   const handleDelete = () => {
-   dispatch({
-    type: ActionTypes.REMOVE_TODO,
-    payload: todo.id,
-   })
+   dispatch(removeTodo(todo.id))
   };
 
   const handleStatus = () => {
    
     const updated = { ...todo , is_done: !todo.is_done };
 
-    dispatch({
-      type: ActionTypes.UPDATE_TODO,
-      payload: updated,
-
-    })
+    dispatch(updateTodo(updated))
   }
 
   return (

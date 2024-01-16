@@ -14,3 +14,8 @@ export const removeTodo = (payload) => ({
     type: ActionTypes.REMOVE_TODO,
     payload,
 })
+
+export const setTodos = (payload) => ({
+    type: ActionTypes.SET_TODOS,
+    payload,
+})

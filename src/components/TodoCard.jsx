@@ -9,6 +9,9 @@ const TodoCard = ({ todo }) => {
   const[isOpen, setIsOpen] = useState(false)
 
   const handleDelete = () => {
+
+   axios.delete(`/todos/${todo.id}`)
+
    dispatch(removeTodo(todo.id))
   };
 

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { ActionTypes } from "../redux/reducers/actionTypes";
+import axios from "axios";
 import { updateTodo } from "../redux/actions/todoActions";
 
 const Modal = ({todo , close}) => {
@@ -13,10 +13,16 @@ const Modal = ({todo , close}) => {
 
     const updated = {...todo, text:newText };
 
-    dispatch( updateTodo(updated));
+    axios.put(`/todos/${todo.id}` , updated)
+    .then(() => dispatch( updateTodo(updated)));
 
+  
     close();
   }
+
+  
+
+
   return (
     <div className="modal d-block text-dark bg-black bg-opacity-50" tabindex="-1">
       <div className="modal-dialog-centered modal-dialog">
